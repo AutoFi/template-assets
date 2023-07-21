@@ -1,13 +1,13 @@
-# terraform {
-#   required_providers {
-#     port-labs = {
-#       source  = "port-labs/port-labs"
-#       version = "0.10.4"
-#     }
-#   }
-# }
+terraform {
+  required_providers {
+    port-labs = {
+      source  = "port-labs/port-labs"
+      version = "~> 1.0.0"
+    }
+  }
+}
 
-resource "port-labs_blueprint" "sqs_queue" {
+resource "port_blueprint" "sqs_queue" {
   title      = "SQS Queue"
   icon       = "AWS"
   identifier = "sqs"
@@ -74,4 +74,6 @@ resource "port-labs_blueprint" "sqs_queue" {
        many       = false
        required   = false
      }
+
+     provider = port-labs
 }

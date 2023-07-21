@@ -1,13 +1,13 @@
-# terraform {
-#   required_providers {
-#     port-labs = {
-#       source  = "port-labs/port-labs"
-#       version = "0.10.4"
-#     }
-#   }
-# }
+terraform {
+  required_providers {
+    port-labs = {
+      source  = "port-labs/port-labs"
+      version = "~> 1.0.0"
+    }
+  }
+}
 
-resource "port-labs_blueprint" "s3_bucket" {
+resource "port_blueprint" "s3_bucket" {
   title      = "S3 Bucket"
   icon       = "Bucket"
   identifier = "s3_bucket"
@@ -61,4 +61,6 @@ resource "port-labs_blueprint" "s3_bucket" {
     type       = "string"
     title      = "ARN"
   }
+
+  provider = port-labs
 }

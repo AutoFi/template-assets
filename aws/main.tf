@@ -1,11 +1,4 @@
-# terraform {
-#   required_providers {
-#     local = {
-#       source = "hashicorp/local"
-#       version = "2.4.0"
-#     }
-#   }
-# }
+
 
 data "aws_caller_identity" "current" {}
 
@@ -20,6 +13,10 @@ data "aws_region" "current" {}
 module "port_blueprints_creator" {
   source = "./aws_blueprints_template"
   resources = var.resources
+
+  providers = {
+    port-labs = port-labs
+  }
 }
 
 locals {
@@ -82,11 +79,19 @@ resource "local_file" "event_rules" {
 
 # Deploy the AWS exporter application
 module "port_aws_exporter" {
-  source  = "./terraform-aws-port-exporter" # "port-labs/port-exporter/aws"
+  source  = "./terraform-aws-port-exporter" 
+  # source = "port-labs/port-exporter/aws"
   # version = "0.1.2"
   config_json   = local.combined_config
   lambda_policy = local.combined_policies
   bucket_name = local.bucket_name
+
+  schedule_expression = "rate(5 minutes)"
+  schedule_state    = "ENABLED"
+
+  providers = {
+    jsonschema = jsonschema
+  }
 }
 
 resource "aws_cloudformation_stack" "port-aws-exporter-event-rules" {

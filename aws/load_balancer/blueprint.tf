@@ -1,13 +1,13 @@
-# terraform {
-#   required_providers {
-#     port-labs = {
-#       source  = "port-labs/port-labs"
-#       version = "0.10.4"
-#     }
-#   }
-# }
+terraform {
+  required_providers {
+    port-labs = {
+      source  = "port-labs/port-labs"
+      version = "~> 1.0.0"
+    }
+  }
+}
 
-resource "port-labs_blueprint" "loadBalancer" {
+resource "port_blueprint" "loadBalancer" {
   title      = "Load Balancer"
   icon       = "AWS"
   identifier = "loadBalancer"
@@ -101,4 +101,6 @@ resource "port-labs_blueprint" "loadBalancer" {
       required   = false
     }
 
+
+    provider = port-labs
 }

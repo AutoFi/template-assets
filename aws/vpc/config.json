@@ -1,20 +1,17 @@
 {
-  "kind": "AWS::RDS::DBInstance",
+  "kind": "AWS::EC2::VPC",
   "port": {
     "entity": {
       "mappings": [
         {
-          "identifier": ".DBInstanceIdentifier",
-          "title": ".DBInstanceIdentifier",
-          "blueprint": "database",
+          "identifier": ".VpcId",
+          "title": ".Tags // [] | if isempty(.[] | select(.Key == \"Name\")) then .VpcId else .[] | select(.Key == \"Name\") | .Value end",
+          "blueprint": "vpc",
           "properties": {
-            "database": ".DBInstanceIdentifier",
-            "cluster": ".DBClusterIdentifier",
-            "properties": "."
+            "cidr_block": ".CidrBlock",
+            "arn": "."
           },
           "relations": {
-            "region": ".DBInstanceArn | split(\":\")[3]",
-            "cloudAccount": ".DBInstanceArn | split(\":\")[4]",
             "stack": ".Tags // [] | if isempty(.[] | select(.Key == \"autofi:stack\")) then \"unknown\" else .[] | select(.Key == \"autofi:stack\") | .Value end",
             "env": ".Tags // [] | if isempty(.[] | select(.Key == \"autofi:env\")) then \"unknown\" else .[] | select(.Key == \"autofi:env\") | .Value end",
             "app": ".Tags // [] | if isempty(.[] | select(.Key == \"autofi:app\")) then \"unknown\" else .[] | select(.Key == \"autofi:app\") | .Value end"

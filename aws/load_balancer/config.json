@@ -6,7 +6,7 @@
              {
                 "identifier":".LoadBalancerName",
                 "title":".LoadBalancerName",
-                "blueprint":"loadBalancer",
+                "blueprint":"loadbalancer",
                 "properties":{
                    "link":"\"https://console.aws.amazon.com/go/view?arn=\" + .LoadBalancerArn",
                    "state":".State.Code",
@@ -22,10 +22,16 @@
                    "arn":".LoadBalancerArn"
                 },
                 "relations":{
-                   "region":".LoadBalancerArn | split(\":\") | .[3]"
+                  "stack": ".Tags // [] | if isempty(.[] | select(.Key == \"autofi:stack\")) then \"unknown\" else .[] | select(.Key == \"autofi:stack\") | .Value end",
+                  "env": ".Tags // [] | if isempty(.[] | select(.Key == \"autofi:env\")) then \"unknown\" else .[] | select(.Key == \"autofi:env\") | .Value end",
+                  "app": ".Tags // [] | if isempty(.[] | select(.Key == \"autofi:app\")) then \"unknown\" else .[] | select(.Key == \"autofi:app\") | .Value end",
+                  "vpc_id": ".VpcId",
+                  "region": ".LoadBalancerArn | split(\":\")[3]",
+                  "cloudAccount": ".LoadBalancerArn | split(\":\")[4]"
                 }
              }
           ]
        }
     }
  }
+ 

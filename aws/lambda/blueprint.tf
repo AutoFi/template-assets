@@ -1,13 +1,13 @@
-# terraform {
-#   required_providers {
-#     port-labs = {
-#       source  = "port-labs/port-labs"
-#       version = "0.10.4"
-#     }
-#   }
-# }
+terraform {
+  required_providers {
+    port-labs = {
+      source  = "port-labs/port-labs"
+      version = "~> 1.0.0"
+    }
+  }
+}
 
-resource "port-labs_blueprint" "lambda_function" {
+resource "port_blueprint" "lambda_function" {
   title      = "Lambda"
   icon       = "Lambda"
   identifier = "lambda"
@@ -101,4 +101,6 @@ resource "port-labs_blueprint" "lambda_function" {
        many       = false
        required   = false
      }
+
+     provider = port-labs
 }
