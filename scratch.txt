@@ -1,0 +1,4 @@
+            "console_log_index": ".Tags // [] | if (isempty(.[] | select(.Key == \"autofi:env\")) or (.[] | select(.Key == \"autofi:env\") | .Value != \"prod\")) then \"7b38db90-48f3-11ed-a3e0-4d2200e5ec82\" else \"abcc8690-65e4-11ed-a70c-2dc2eb9b4315\" end",
+
+
+".Tags // [] | if (isempty(.[] | select(.Key == "autofi:env")) or (.[] | select(.Key == "autofi:env") | .Value != "prod")) then "7b38db90-48f3-11ed-a3e0-4d2200e5ec82" else "abcc8690-65e4-11ed-a70c-2dc2eb9b4315" end"
