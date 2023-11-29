@@ -5,6 +5,8 @@
 
 blueprint
 specific keys, duplicate subdomain
+relation
+set compound key on ingest
 
 if stack is core 
     if env is not prod
