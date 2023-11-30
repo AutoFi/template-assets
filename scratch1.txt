@@ -19,4 +19,32 @@ else if stack is santander
     else if env is perf
         return perf
     else
-        return stage2
+        return stage2 
+
+
+
+
+
+https://a80f9247fafe4086837deb215b45c905.us-east-1.aws.found.io:9243/app/discover#/?_g=(filters:!(),query:(language:kuery,query:''),refreshInterval:(pause:!t,value:0),time:(from:now-1h,to:now))&_a=(columns:!(ip,message,status,host),filters:!(('$state':(store:appState),meta:(alias:!n,disabled:!f,index:'7b38db90-48f3-11ed-a3e0-4d2200e5ec82',key:container_name,negate:!f,params:(query:core-analytics-web-env1),type:phrase),query:(match_phrase:(container_name:core-analytics-web-env1)))),hideChart:!f,index:'7b38db90-48f3-11ed-a3e0-4d2200e5ec82',interval:auto,query:(language:lucene,query:''),sort:!(!('@timestamp',desc)))
+
+
+
+https://fe7e74b1a00f4262a7ec8532963d5ce1.us-east-1.aws.found.io:9243/app/discover#/?_g=(filters:!(),query:(language:kuery,query:''),refreshInterval:(pause:!t,value:0),time:(from:now-1h,to:now))&_a=(columns:!(ip,message,status,host),filters:!(('$state':(store:appState),meta:(alias:!n,disabled:!f,index:'abcc8690-65e4-11ed-a70c-2dc2eb9b4315',key:container_name,negate:!f,params:(query:core-automation-jira-cloud-backups-worker-prod),type:phrase),query:(match_phrase:(container_name:core-automation-jira-cloud-backups-worker-prod)))),hideChart:!f,index:'abcc8690-65e4-11ed-a70c-2dc2eb9b4315',interval:auto,query:(language:lucene,query:''),sort:!(!('@timestamp',desc)))
+
+
+
+
+https://santander-stage2.kb.us-east-1.aws.found.io:9243/app/discover?auth_provider_hint=cloud-saml-kibana&auth_url_hash=%23%2F%3F_g%3D%28filters%3A%21%28%29%2Cquery%3A%28language%3Akuery%2Cquery%3A%27%27%29%2CrefreshInterval%3A%28pause%3A%21t%2Cvalue%3A0%29%2Ctime%3A%28from%3Anow-1h%2Cto%3Anow%29%29%26_a%3D%28columns%3A%21%28ip%2Cmessage%2Cstatus%2Chost%29%2Cfilters%3A%21%28%28%27%24state%27%3A%28store%3AappState%29%2Cmeta%3A%28alias%3A%21n%2Cdisabled%3A%21f%2Cindex%3A%277b38db90-48f3-11ed-a3e0-4d2200e5ec82%27%2Ckey%3Asystem.app%2Cnegate%3A%21f%2Cparams%3A%28query%3Aautofi-ent-santander-consumer-dev%29%2Ctype%3Aphrase%29%2Cquery%3A%28match_phrase%3A%28system.app%3Aautofi-ent-santander-consumer-dev%29%29%29%29%2ChideChart%3A%21f%2Cindex%3A%277b38db90-48f3-11ed-a3e0-4d2200e5ec82%27%2Cinterval%3Aauto%2Cquery%3A%28language%3Alucene%2Cquery%3A%27%27%29%2Csort%3A%21%28%21%28%27%40timestamp%27%2Cdesc%29%29%29#/?_g=(filters:!(),query:(language:kuery,query:''),refreshInterval:(pause:!t,value:0),time:(from:now-1h,to:now))&_a=(columns:!(ip,status,host),filters:!(('$state':(store:appState),meta:(alias:!n,disabled:!f,index:'7b38db90-48f3-11ed-a3e0-4d2200e5ec82',key:system.app,negate:!f,params:(query:autofi-ent-santander-consumer-dev),type:phrase),query:(match_phrase:(system.app:autofi-ent-santander-consumer-dev)))),hideChart:!f,index:'8df77fc0-3841-11ec-ab69-59b55853163a',interval:auto,query:(language:lucene,query:''),sort:!(!('@timestamp',desc)))
+
+
+
+
+https://a80f9247fafe4086837deb215b45c905.us-east-1.aws.found.io:9243/app/discover#/?_g=(filters:!(),query:(language:kuery,query:''),refreshInterval:(pause:!t,value:0),time:(from:now-1h,to:now))&_a=(columns:!(ip,message,status,host),filters:!(('$state':(store:appState),meta:(alias:!n,disabled:!f,index:'7b38db90-48f3-11ed-a3e0-4d2200e5ec82',key:container_name,negate:!f,params:(query:core-cobra-web-uat),type:phrase),query:(match_phrase:(container_name:core-cobra-web-uat)))),hideChart:!f,index:'7b38db90-48f3-11ed-a3e0-4d2200e5ec82',interval:auto,query:(language:lucene,query:''),sort:!(!('@timestamp',desc)))
+
+
+
+core-cobra-web-uat
+test app logs
+https://fe7e74b1a00f4262a7ec8532963d5ce1.us-east-1.aws.found.io:9243/app/discover#/?_g=(filters:!(),query:(language:kuery,query:''),refreshInterval:(pause:!t,value:0),time:(from:now-1h,to:now))&_a=(columns:!(ip,message,status,host),filters:!(('$state':(store:appState),meta:(alias:!n,disabled:!f,index:'7b38db90-48f3-11ed-a3e0-4d2200e5ec82',key:system.app,negate:!f,params:(query:autofi-cobra-uat),type:phrase),query:(match_phrase:(system.app:autofi-cobra-uat)))),hideChart:!f,index:'7b38db90-48f3-11ed-a3e0-4d2200e5ec82',interval:auto,query:(language:lucene,query:''),sort:!(!('@timestamp',desc)))
+app logs
+https://a80f9247fafe4086837deb215b45c905.us-east-1.aws.found.io:9243/app/discover#/?_g=(filters:!(),query:(language:kuery,query:''),refreshInterval:(pause:!t,value:0),time:(from:now-1h,to:now))&_a=(columns:!(ip,message,status,host),filters:!(('$state':(store:appState),meta:(alias:!n,disabled:!f,index:'7b38db90-48f3-11ed-a3e0-4d2200e5ec82',key:system.app,negate:!f,params:(query:autofi-cobra-uat),type:phrase),query:(match_phrase:(system.app:autofi-cobra-uat)))),hideChart:!f,index:'7b38db90-48f3-11ed-a3e0-4d2200e5ec82',interval:auto,query:(language:lucene,query:''),sort:!(!('@timestamp',desc)))
